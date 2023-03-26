@@ -53,3 +53,10 @@ https://gitcode.net/mirrors/fluid-dev/hexo-theme-fluid
 
 ## 教程
 https://blog.csdn.net/qq_58608526/article/details/124652412
+
+## 问题整理
+### git部署
+使用git部署，需要安装git工具，命令为`npm install hexo-deployer-git --save`。
+
+注：部署`hexo d`部署成功，意味这会将`hexo g`生成的文件，上传到github服务器上。
+
