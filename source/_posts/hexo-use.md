@@ -49,7 +49,8 @@ https://hexo.io/themes/
 https://github.com/xbmlz/hexo-theme-maple
 
 ### fluid
-https://gitcode.net/mirrors/fluid-dev/hexo-theme-fluid
+引入指南：https://gitcode.net/mirrors/fluid-dev/hexo-theme-fluid
+使用手册：https://hexo.fluid-dev.com/docs/guide/
 
 ## 教程
 https://blog.csdn.net/qq_58608526/article/details/124652412
