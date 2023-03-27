@@ -34,9 +34,13 @@ hexo new page c
 hexo generate 或者是 hexo g
 ## 部署文章
 hexo deploy 或者是 hexo d
-## 一键部署
+## 一键部署-部署到后台
 hexo clean && hexo generate && hexo deploy
+## 一键部署-本地部署
+hexo clean && hexo generate && hexo s
 
+## 自动生成abbrlink
+npm install hexo-abbrlink --save
 
 # 备忘
 ## next主题错误的解决方案

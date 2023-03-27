@@ -3,7 +3,7 @@ title: 搭建个人网址(4)——MySql数据库服务
 tags:
   - 服务器搭建
 categories:
-  - 技术
+  - 服务器
 abbrlink: 44322
 date: 2023-01-01 10:00:04
 ---

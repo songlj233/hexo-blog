@@ -3,7 +3,7 @@ title: 搭建个人网址(3)——ChatGPT服务搭建
 tags:
   - 服务器搭建
 categories:
-  - 技术
+  - 服务器
 abbrlink: 23491
 date: 2022-12-31 10:00:03
 ---
