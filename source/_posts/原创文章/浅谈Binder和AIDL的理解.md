@@ -1,4 +1,14 @@
-# 浅谈Binder和AIDL的理解
+---
+title: 浅谈Binder和AIDL的理解
+tags:
+  - 原创
+  - 安卓
+categories:
+  - 安卓
+abbrlink: 23f8f4e2
+date: 2021-01-20 16:52:00
+---
+
 
 ## Binder基本概述
 

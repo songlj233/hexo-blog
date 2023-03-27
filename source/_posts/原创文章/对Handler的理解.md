@@ -1,4 +1,13 @@
-# 对Handler的理解
+---
+title: 对Handler的理解
+tags:
+  - 原创
+  - 安卓
+categories:
+  - 安卓
+abbrlink: a415fd08
+date: 2020-12-30 13:22:00
+---
 
 ### 基本介绍
 

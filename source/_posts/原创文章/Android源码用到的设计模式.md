@@ -1,4 +1,13 @@
-# Android源码用到的设计模式
+---
+title: Android源码用到的设计模式
+tags:
+  - 原创
+  - 安卓
+categories:
+  - 安卓
+abbrlink: 83f0e72c
+date: 2021-01-25 21:25:00
+---
 
 ## 3种类型
 

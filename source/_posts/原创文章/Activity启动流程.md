@@ -1,4 +1,13 @@
-# Activity启动流程
+---
+title: Activity启动流程
+tags:
+  - 原创
+  - 安卓
+categories:
+  - 安卓
+abbrlink: 5bb05e10
+date: 2021-01-25 09:00:00
+---
 
 ## 发送启动Activity的请求
 
