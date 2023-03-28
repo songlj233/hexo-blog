@@ -79,7 +79,7 @@ primary key(id)
 ```
 运行效果如下图
 
-![avatar](../../pic/MySql-创建数据库.png)
+![avatar](../../pic/搭建服务器/MySql-创建数据库.png)
 
 用`exit`退出mysql命令行。
 
@@ -97,7 +97,7 @@ primary key(id)
 ### MySql可视化软件
 在个人电脑上安装MySql可视化软件，Window可使用Navicat，Mac上使用MySQLWorkBench。
 以MySQLWorkBench为例：
-![img.png](../../pic/MySql-远程连接.png)
+![img.png](../../pic/搭建服务器/MySql-远程连接.png)
 新建连接，填写连接的参数，包括连接名、IP、端口（默认3306）、用户名、密码。
 填完后点击下面的测试连接是否成功。
 
@@ -144,7 +144,7 @@ collation-server = utf8mb4_bin  #utf8mb4_unicode_ci 会导致部分字符查询�
 
 2. 修改代码中generate.js文件中的数据库参数，如下图：
 
-![img](../../pic/MySql-修改数据.png)
+![img](../../pic/搭建服务器/MySql-修改数据.png)
 
 3. 重新部署程序，当每次请求时，不出意外的话，请求的信息就会保存到数据库中。
 
