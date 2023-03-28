@@ -25,15 +25,6 @@ function init(){
 	show_rank.onclick=function(e){
 		showRankPanel();
 	}
-	setInterval(refreshTime, 1000);
-}	
-
-var playtime = 0;
-//计时
-function refreshTime(){
-	playtime ++;
-	usetime_1 = document.getElementById("usetime");
-	usetime_1.innerHTML = playtime;
 }
 
 function play(e){
@@ -187,8 +178,8 @@ function add9num(e){
 			dateInit();
 			showMyNum();
 			if(debug || isWin()){
-				//alert("win");
-				showSetName();
+				alert("win");
+				restart();
 			}
 		}
 	}
@@ -216,195 +207,6 @@ function showMyNum(){
 	}
 	context.restore();	
 }
-
-function showSetPanel(){
-	settingPanel = document.getElementById("settingPanel");
-	settingPanel.style.display="block";
-	//设置背景音乐
-	var audio = document.getElementsByTagName("audio")[0];
-	music_switch = document.getElementById("music_switch");
-	music_switch.onclick=function(){
-		if(music_switch_flag == 0){
-			music_switch.src="image/on_music.jpg";
-			music_switch_flag=1;
-			audio.play();
-		}
-		else{
-			music_switch.src="image/off_music.jpg";
-			music_switch_flag=0;
-			audio.pause();
-		}		
-	}
-	//取消
-	cancel = document.getElementById("cancel");
-	cancel.onclick=function(){
-		settingPanel.style.display="none";
-	}
-	//确定
-	confirm = document.getElementById("confirm");
-	confirm.onclick=function(){
-		//选择难度和关卡
-		degree = document.getElementById("degree");
-		var degree_index_temp=degree.selectedIndex+1;
-		guanka = document.getElementById("guanka");
-		var guanka_index_temp=guanka.selectedIndex+1;
-		//如果改变难度
-		if(degree_index!=degree_index_temp || guanka_index!=guanka_index_temp){
-			degree_index=degree_index_temp;
-			guanka_index=guanka_index_temp;
-			restart();
-		}
-		settingPanel.style.display="none";
-	}
-}
-
-function showRankPanel(){
-	rankPanel = document.getElementById("rankPanel");
-	rankPanel.style.display="block";
-	//加载排行数据
-	loadRankData();
-	//关闭
-	close_rank = document.getElementById("close_rank");
-	close_rank.onclick=function(){
-		rankPanel.style.display="none";
-	}
-	
-}
-
-//设置名字
-function showSetName(){
-	setNamePanel = document.getElementById("setNamePanel");
-	setNamePanel.style.display="block";
-	//取消
-	cancel = document.getElementById("input_name_cancel");
-	cancel.onclick=function(){
-		setNamePanel.style.display="none";
-	}
-	//确定
-	confirm = document.getElementById("input_name_confirm");
-	confirm.onclick=function(){
-		//获取名字
-		input_name = document.getElementById("input_name");
-		name = input_name.value;
-		if (isEmpty(name)) {
-			alert("请输入名字！")
-			return;
-		}
-		sendScore3(name);
-		//alert(name + ",time:"+playtime);
-		setNamePanel.style.display="none";
-		restart();
-	}
-}
-
-//字符串判空
-function isEmpty(obj){
-    if(typeof obj == "undefined" || obj == null || obj.length == ""){
-		console.log("no input")
-        return true;
-    }else if(obj.match(/^[ ]+$/)){
-		console.log("all space")
-        return true;
-    }else if(obj.match(/^\s+$/)){
-		console.log("all space or \\n")
-        return true;
-    }else{
-        return false;
-    }
-}
-
-//发送请求
-function sendScore(){
-	var xmlhttp;
-	if (window.XMLHttpRequest){
-		// code for IE7+, Firefox, Chrome, Opera, Safari
-		xmlhttp=new XMLHttpRequest();
-	} else {
-		// code for IE6, IE5
-		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-	}
-	xmlhttp.withCredentials = true; // 设置运行跨域操作
-	xmlhttp.open("POST","http://139.224.13.102:89/insert",true);
-	xmlhttp.send("name=rs&usetime=32");
-	//监听服务端
-    xmlhttp.onreadystatechange=function () {
-		if (xmlhttp.readyState ==4 && xmlhttp.status ==200){
-			alert(xmlhttp.responseText);
-			alert(typeof xmlhttp.responseText)
-		} else {
-			alert("请求失败");
-		}
-	}
-}
-
-function sendScore2(){
-	console.log("33333333333");  
-	$.get("http://139.224.13.102:89/insert?name=rs&usetime=32",function(data,status){
-		alert("Data: " + data + "\nStatus: " + status);
-	});
-	
-	$.post("http://139.224.13.102:89/insert",{
-		name:"Donald Duck",
-		usrtime:23
-	},function(data,status){
-		alert("Data: " + data + "\nStatus: " + status);
-	});
-	
-	$.ajax({  
-		url : 'http://139.224.13.102:89/insert?name=rs&usetime=32',  
-		xhrFields: {  
-		withCredentials: true // 设置运行跨域操作  
-	},  
-	success : function(data) {  
-		console.log(data);  
-	}  
-	});
-  
-}
-
-function sendScore3(name) {    
-	$.ajax({          
-		type:  'GET',
-		url:   "http://47.104.244.239:5000/api/insert/" + name + "/" + playtime,
-		dataType: 'script',              
-		success: function(res){
-			alert('上传成功');
-		}
-	 });
-}
-
-function loadRankData(){
-	$.ajax({          
-		type:  'GET',
-		url:   'http://47.104.244.239:5000/api/rank',
-		dataType: 'jsonp',
-		jsonpCallback:"showData",
-		jsonpCallback: "handleCallback",        
-		success: function(res){
-			showData(res);
-		},
-		error: function(res){
-			console.log("error" + res.name);
-		}
-	 });
-}
-
-//回调函数
- function showData (result) {
-	var data = JSON.stringify(result); //json对象转成字符串
-	console.log(data);
-	
-	setNamePanel = document.getElementById("rank_content");
-	var content = "";
-	var lenght = result.data.length;
-	for(var i=0; i<lenght; i++) {
-		//console.log("name:" + result[i].name);
-		//console.log("time:" + result[i].usetime);
-		content = content + result.data[i].name + ":" + result.data[i].score + "<br />";
-		console.log(content);
-		setNamePanel.innerHTML = content;
-	}
- }
 
 function restart(){
 	context.clearRect(0,0,450,450);
