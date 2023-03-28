@@ -31,11 +31,11 @@ date: 2021-01-25 09:00:00
 
 7.0版本的Activity启动时序图
 
-![Activity%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B%20de1aa1b36a0b44c4907f5e2ef5bbef6e/Untitled.png](Activity%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B%20de1aa1b36a0b44c4907f5e2ef5bbef6e/Untitled.png)
+![Activity启动流程7.0](../../pic/原创文章/Activity启动流程7.0.png)
 
 9.0版本的Activity启动时序图：
 
-![Activity%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B%20de1aa1b36a0b44c4907f5e2ef5bbef6e/Untitled%201.png](Activity%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B%20de1aa1b36a0b44c4907f5e2ef5bbef6e/Untitled%201.png)
+![Activity启动流程9.0](../../pic/原创文章/Activity启动流程9.0.png)
 
 ## 参考
 
