@@ -1,6 +1,8 @@
 ---
 title: hexo搭建博客教程
 tags: hexo
+categories:
+- hexo
 abbrlink: a6efda57
 date: 2023-03-28 15:20:00
 ---

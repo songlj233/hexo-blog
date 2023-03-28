@@ -1,6 +1,8 @@
 ---
 title: hexo命令汇总
 tags: hexo
+categories:
+- hexo
 abbrlink: 21521
 date: 2023-03-26 12:34:44
 ---
