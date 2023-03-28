@@ -15,11 +15,19 @@ cd hexo-blog
 ```
 
 ### 3. 部署项目
+#### 安装node模块
+```
+npm install 
+```
+
 #### 本地一键运行
 ```
-hexo clean && hexo generate && hexo s
+hexo clean && hexo g && hexo s
 ```
+运行结果在浏览器`http://localhost:4000`查看
+
 #### 部署到服务器
+本操作可选，部署的路径为`_config.yml`文件中的`deploy`配置项中的git地址和分支
 ```
 hexo d
 ```
